@@ -197,7 +197,7 @@ namespace P.V.WantHelp_.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-        public ActionResult VistaDetalleRA()
+        /*public ActionResult VistaDetalleRA()
         {
             List<ListaRolesAsignadosU> lista = db.DetalleRolesAsignadosUsers.Select(a => new
                 ListaRolesAsignadosU() {
@@ -210,6 +210,6 @@ namespace P.V.WantHelp_.Controllers
                 ).OrderByDescending(a=>a.Nombre).ToList();
             ViewBag.listaRolU = lista;
             return View();
-        }
+        }*/
     }
 }
