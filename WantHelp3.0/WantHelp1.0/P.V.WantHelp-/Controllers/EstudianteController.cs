@@ -28,7 +28,7 @@ namespace P.V.WantHelp_.Controllers
             /*******************/
             //Cursos cursofoto = db.Cursos();
             //ViewBag.fotoportada = cursofoto.FotoPortada;
-            return View(db.Cursos.ToList()); ;
+            return View(db.Cursos.OrderByDescending(a => a.Id_Curso).ToList()); ;
         }
         public ActionResult ClasesCurso(int id)
         {

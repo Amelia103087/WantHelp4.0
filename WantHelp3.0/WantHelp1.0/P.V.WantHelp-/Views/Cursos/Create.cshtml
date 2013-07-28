@@ -47,9 +47,9 @@
         font-weight: bold;
     }
 </style>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="~/Content/themes/base/jquery-ui.css"/>
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.8.20.js"></script>
 <script src="~/Js/jquery.ui.datepicker-es.js"></script>
 <script>
     $(function () {
@@ -77,11 +77,10 @@
             , altField: '#from_fecha_texto'
             , altFormat: "DD, d 'de' MM 'de' yy",
 
-            showAnim: "fold",
-            showOn: "button",
+            showAnim: "fold",/*
+            showOn: "button",/*
             buttonImage: "../../Images/img/calendar.gif",
-            buttonImageOnly: true,
-
+            buttonImageOnly: true,*/
             onClose: function (selectedDate) {
                 $("#Fecha_F").datepicker("option", "minDate", selectedDate);
             }
@@ -95,10 +94,10 @@
             , altField: '#to_fecha_texto'
             , altFormat: "DD, d 'de' MM 'de' yy",
 
-            showAnim: "fold",
-            showOn: "button",
+            showAnim: "fold",/*
+            showOn: "button",/*
             buttonImage: "../../Images/img/calendar.gif",
-            buttonImageOnly: true,
+            buttonImageOnly: true,*/
 
             onClose: function (selectedDate) {
                 $("#Fecha_I").datepicker("option", "maxDate", selectedDate);
@@ -139,7 +138,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Fecha_I)
+            <b>Fecha Inicio</b>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Fecha_I)
@@ -148,7 +147,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Fecha_F)
+            <b>Fecha Final</b>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Fecha_F)

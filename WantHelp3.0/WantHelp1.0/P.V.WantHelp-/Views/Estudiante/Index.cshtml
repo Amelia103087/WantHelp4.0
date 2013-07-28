@@ -5,7 +5,27 @@
 
 <link rel="stylesheet" type="text/css" href="~/Css/ink-min.css">
 <style type="text/css">
-    
+    .contenedor_opciones{
+       margin:0 auto;
+       width:500px;
+       border:#000000 0px solid;
+       min-height:30px;
+       text-align:center;
+    }
+    .opciones{
+       display:inline-block;
+       padding-left:0px 2px;
+       margin:2px 5px;
+       color:#000000;
+       font-weight:normal;
+       font-size:12px;
+       vertical-align:middle;
+       text-align:center;
+       float:left;
+    }
+    .titulo {
+        font-family:Gabriola;font-size:20px;color:#d7d8e1; text-align:center;
+    }
     footer {
     clear:both;
     background-color: #414E5E;   
@@ -13,45 +33,48 @@
     height: 61px;
     border-radius: 5px 5px 5px 5px;
     margin:2px 2px 2px 2px;
-
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FF252525');
-    
 }
+    
+    .DescriptcionC {
+        margin:auto;margin-left:60%;width:35%;margin-top:-20px;
+    }
 </style>
 <section class="content-wrapper main-content clear-fix">
-<div id="body_Curso">
-<h2 class="letraD" style="font-size:30px; left:0;">Bienvenido a los cursos</h2>
-@foreach (var item in Model){
-    <h3></h3>
-    <h2 style="display:none;">
-        @Html.DisplayFor(modelItem => item.Id_Curso)
-    </h2>
-    
-    <a href="http://localhost:2606/" style="cursor:pointer; background-image:url('@Html.DisplayFor(modelItem => item.FotoPortada)')no-repeat; ">
-       
-         <div id="contenedorA"> 
-               
-                 
-            <h1 class="sin-bordes"  style="font-family:Gabriola;font-size:20px;color:#d7d8e1;">
-                @Html.DisplayFor(modelItem => item.Titulo)        
+    <div id="body_Curso">
+    <h2 class="letraD" style="font-size:30px; left:0;">Bienvenido a los cursos</h2>
+    @foreach (var item in Model){
+        <br />
+        <h2 style="display:none;">
+            @Html.DisplayFor(modelItem => item.Id_Curso)
+        </h2>
+        <div id="contenedorA">
+            <h1 class="sin-bordes titulo">
+                @Html.DisplayFor(modelItem => item.Titulo)
                 <span class="forma"></span>
-
             </h1>
-
-            <div style="margin:auto; margin-left:8%;margin-right:8%;">
-                <img src="@Html.DisplayFor(modelItem => item.FotoPortada)" width="200" height="80" style="border-radius:5px;">
-                @Html.DisplayFor(modelItem => item.Descripcion) 
-                        
-            </div>   
-                <div>@Html.ActionLink("Ingresar al Curso", "ClasesCurso", new { id=item.Id_Curso })</div> 
-                <div style="margin:auto;margin-left:60%;width:35%;margin-top:-20px;"><img src="~/Images/cal-icono-9496-32.png">
-                    
-                    <small>@Html.DisplayFor(modelItem => item.Fecha_I) &nbsp;&nbsp;|&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.Fecha_F)</small>    
-                </div>   
-                            
+            <div class="contenedor_opciones">
+                <div class="opciones" style="margin:auto; margin-left:8%;margin-right:8%;">
+                    <img src="@Html.DisplayFor(modelItem => item.FotoPortada)" width="200" height="80" style="border-radius:5px;">
+                </div>
+                <div class="opciones">
+                    @Html.DisplayFor(modelItem => item.Descripcion) 
+                </div>
+            </div>
+            <div class="opciones classname">@Html.ActionLink("Ingresar al Curso", "ClasesCurso", new { id=item.Id_Curso })</div>
+            <div class="opciones DescriptcionC">
+                <a href="/" class="tt">
+                    <img src="~/Images/cal-icono-9496-32.png">
+                    <span class="tooltipC">
+                        <span class="top"></span>
+                        <span class="middle">
+                            @Html.DisplayFor(modelItem => item.Fecha_I) &nbsp;&nbsp;|&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.Fecha_F)
+                        </span><span class="bottom"></span>
+                    </span>
+                </a>
+                <small></small>    
+            </div>
         </div>
-     </a>
-    
-}
-    </div>
-    </section>
+    }
+   </div>
+</section>

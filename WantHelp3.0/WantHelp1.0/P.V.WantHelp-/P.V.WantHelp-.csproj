@@ -362,6 +362,10 @@
     <Content Include="Images\img\Add Folder.png" />
     <Content Include="Images\img\add.png" />
     <Content Include="Images\img\alerta.png" />
+    <Content Include="Images\img\bubble.png" />
+    <Content Include="Images\img\bubble3.png" />
+    <Content Include="Images\img\bubble_filler.png" />
+    <Content Include="Images\img\bubble_filler3.png" />
     <Content Include="Images\img\calendar.gif" />
     <Content Include="Images\img\cube.png" />
     <Content Include="Images\img\database_edit.png" />
